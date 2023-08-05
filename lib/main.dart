@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
+import 'package:information_about_location_futurebuilder/widgets/button_widget/button_widget.dart';
 import 'package:information_about_location_futurebuilder/widgets/city_widget/city_widget.dart';
 import 'package:information_about_location_futurebuilder/widgets/solar_day_widget/solar_day_widget.dart';
 import 'package:information_about_location_futurebuilder/widgets/weather_widget/weather_widget.dart';
@@ -75,36 +76,8 @@ class _MyAppState extends State<MyApp> {
                           ),
                         );
                       }),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          const Text(
-                            'Take the current position.',
-                            textAlign: TextAlign.left,
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20),
-                          ),
-                          Text(
-                            'Latitude: ${double.parse(coord.latitude.toStringAsFixed(7))}',
-                            textAlign: TextAlign.left,
-                            style: const TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20),
-                          ),
-                          Text(
-                            'Longitude: ${double.parse(coord.longitude.toStringAsFixed(7))}',
-                            textAlign: TextAlign.left,
-                            style: const TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20),
-                          ),
-                        ],
+                      ButtonWidget(
+                        coord: coord,
                       ),
                     ],
                   )),
